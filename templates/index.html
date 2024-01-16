@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobrilovo Village</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <script src="{{ url_for('static', filename='/scripts/script.js') }}" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='/images/icon.ico') }}" type="image/x-icon">
+</head>
+
+<body>
+    <div class="background">
+<!--        <div class="mobile__container">-->
+<!--            <div class="mobile__menu">-->
+<!--                <div class="open_left_part">-->
+<!--                    <img src="{{ url_for('static', filename='/images/menu-icon.svg') }}" alt="" class="menu-icon">-->
+<!--                </div>-->
+<!--                <div class="mobile__right-part">-->
+<!--                    <div class="menu-part lang">eng</div>-->
+<!--                </div>-->
+<!--                <div class="left-part">-->
+
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="mobile__main-part">-->
+<!--                <div class="logo">Dobrilovo Village</div>-->
+<!--                <div class="dates">-->
+<!--                    <div class="date-row">-->
+<!--                        <div class="comment">Дата заезда:</div>-->
+<!--                    <input type="date" class="dates-check" id="mob__arrive_date" onchange="check_back()">-->
+<!--                    </div>-->
+<!--                    <div class="date-row">-->
+<!--                        <div class="comment">Дата выезда:</div>-->
+<!--                        <input type="date" class="dates-check" id="mob__departure_date" onchange="check_back()">-->
+<!--                    </div>-->
+<!--                    <div class="date-row">-->
+<!--                        <div class="comment">Количество гостей:</div>-->
+<!--                        <input type="number" class="persons" value="2" min="1" max="4" id="mob__pers_num">-->
+<!--                    </div>-->
+<!--                    <div class="date-row">-->
+<!--                        <div class="check-dates" onclick="checkDates()" id="mob__check-dates">Проверить даты</div>-->
+<!--                    </div>-->
+
+<!--                   -->
+<!--                    <div -->
+<!--                        class="check-dates" -->
+<!--                        id="mob__open-book-win"-->
+<!--                        style="display:none;width:14vw;"-->
+<!--                        data-title="Потребуется внести предоплату в размере 30%">-->
+<!--                    Свободно/Забронировать?-->
+<!--                    </div>-->
+<!--                    <div class="loader" style="&#45;&#45;b: 10px;&#45;&#45;c:#ffffff;&#45;&#45;n:15;&#45;&#45;g:10deg;opacity:0;"></div>-->
+<!--                </div>-->
+<!--            </div>    -->
+<!--        </div>-->
+        <div class="container">
+            <div class="menu">
+                <div class="left-part">
+                    <div class="menu-part"><a href="galery.html" class="about-btn">Галерея</a></div>
+                    <div class="menu-part">Забронировать</div>
+                    <div class="menu-part"><a href="about.html" class="about-btn">О нас</a></div>
+                </div>
+                <div class="right-part">
+                    <div class="menu-part lang">eng</div>
+                </div>
+            </div>
+            <div class="main-part">
+                <div class="galery">
+                    <img src="{{ url_for('static', filename='/images/galery/0.png') }}" alt="фото" class="galery-image">
+                    <div class="pagination">
+                        <div class="control-elem"></div>
+                        <div class="control-elem current"></div>
+                        <div class="control-elem"></div>
+                    </div>
+                </div>
+                <div class="about-block">
+                    <div class="logo">Dobrilovo Village</div>
+                    <div class="bottom-part">
+                        <div class="about">
+                            Отдых в Dobrilovo Village - сoвpeменный, cтильный и
+                            до мелoчeй пpoдумaнный гoстевой домик нa cклoне с
+                            живописными видaми, баней и мaнгaльнoй зoнoй
+                        </div>
+                        <div class="dates">
+                            <input type="date" class="dates-check" id="arrive_date" onchange="check_back()">
+                            <input type="date" class="dates-check" id="departure_date" onchange="check_back()">
+                            <input type="number" class="persons" value="2" min="1" max="4" id="pers_num">
+                            <div class="check-dates" onclick="checkDates()" id="check-dates">Проверить даты</div>
+                            <div 
+                                class="check-dates" 
+                                id="open-book-win" 
+                                style="display:none;width:14vw;"
+                                data-title="Потребуется внести предоплату в размере 30%">
+                            Свободно/Забронировать?
+                            </div>
+                            <div class="loader" style="--b: 10px;--c:#ffffff;--n:15;--g:10deg;opacity:0;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts">
+                    <div class="link"><img src="{{ url_for('static', filename='/images/inst.png') }}" alt="inst" class="link_img"></div>
+                    <div class="link"><img src="{{ url_for('static', filename='/images/tele.png') }}" alt="tele" class="link_img"></div>
+                    <div class="link"><img src="{{ url_for('static', filename='/images/yandex.png') }}" alt="yandex" class="link_img"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            ИП Гоптарь Евгений Андреевич, 2024
+        </div>
+    </div>
+    <div class="dates_not_available_win__background" id="dates_not_available_win__background" style="display: none;">
+        <div class="dates_not_available_win__win">
+            <div class="dates_not_available_win__mess" id="dates_not_available_win__mess">
+                Сожалеем, но выбранные Вами даты
+                на данный момент недоступны для бронирования :( Попробуйте выбрать другие даты,
+                будем рады видеть Вас в числе наших гостей.
+            </div>
+            <div class="dates_not_available_win__btn" id="dates_not_available_win__btn" onclick="closeNotAvailableWin()">
+                Понял, выберу другие даты!
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

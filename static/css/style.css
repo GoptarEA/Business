@@ -1,0 +1,1202 @@
+::-webkit-scrollbar {
+  width: 0;
+}
+
+body, html {
+  width: 100%;
+  max-width: 3840px;
+  min-height: 900px;
+  min-width: 800px;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.masonry-layout {
+  column-count: 6;
+  -webkit-column-count: 6;
+  column-gap: 0;
+  -webkit-column-gap: 0;
+}
+.masonry-layout__panel {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  padding: 5px;
+}
+.masonry-layout__panel-content {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+@media (min-width: 1850px) and (max-width: 3840px) {
+  .dates_not_available_win__background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .dates_not_available_win__win {
+    width: 700px;
+    height: fit-content;
+    padding: 20px 40px;
+    background-color: rgb(50, 50, 50);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 15px;
+    gap: 30px;
+  }
+  .dates_not_available_win__mess {
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .dates_not_available_win__btn {
+    padding: 5px 40px;
+    height: fit-content;
+    border: solid white 1px;
+    color: #FFF;
+    text-align: center;
+    font-family: Poiret One, sans-serif;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    word-wrap: normal;
+    position: relative;
+    transition: 0.3s;
+  }
+
+  .dates_not_available_win__btn:hover {
+    background-color: rgba(255, 255, 255, 0.185);
+    transition: 0.3s;
+    cursor: crosshair;
+  }
+
+  .background {
+    background: url("../images/background.png") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mobile__container {
+    display: none;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 15vh;
+    height: 100%;
+    color: white;
+  }
+  .link_img {
+    width: 50px;
+    height: 50px;
+  }
+  .link_img:hover {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    cursor: crosshair;
+  }
+
+  @keyframes shake {
+    10%, 90% {
+      transform: rotate(10deg) scale(1.2);
+    }
+    
+    20%, 80% {
+      transform: rotate(10deg) scale(1.2);
+    }
+  
+    30%, 50%, 70% {
+      transform: rotate(-10deg) scale(1.2);
+    }
+  
+    40%, 60% {
+      transform: rotate(10deg) scale(1.2);
+    }
+  }
+
+  .container {
+    width: 90vw;
+    background-color: rgba(255, 228, 196, 0);
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7vh;
+    padding-top: 3vh;
+  }
+
+  .galery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+  }
+  
+
+  .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .left-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+  }
+
+  .right-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-part {
+    position: relative;
+    padding: 0 20px;
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 7.7px;
+    border-radius: 5px;
+  }
+
+  .menu-part::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #fffafa;
+    transition: 0.4s;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .menu-part:hover:after {
+    width: 100%;
+  }
+
+  .menu-part:hover {
+    cursor: crosshair;
+    transition: 0.2s;
+  }
+
+  .lang {
+    font-size: 30px;
+  }
+
+  .main-part {
+    width: 100%;
+    padding: 0 2vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4vw;
+  }
+
+  .about-block {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    width: 50vw;
+  }
+
+  .bottom-part {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1vw;
+  }
+
+  .dates {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .dates-check {
+    background-color: #53515185;
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    font-size: 30px;
+  }
+  .dates-check {
+    cursor: crosshair;
+  }
+
+  .persons {
+    background-color: #53515185;
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    width: 100px;
+  }
+  .persons:hover {
+    cursor: crosshair;
+  }
+
+
+  .galery-image {
+    width: 30vw;
+    min-width: 550px;
+    height: 30vw;
+  }
+  .logo {
+    color: #FFF;
+    font-family: Italiana;
+    font-size: max(9vw, 200px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 1400px;
+    word-wrap: break-word;
+  }
+
+  .about {
+    color: #FFF;
+    font-family: Poiret One;
+    max-width: 1100px;
+    word-wrap: break-word;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 118.75%; /* 57px */
+    letter-spacing: 8px;
+  }
+
+  .check-dates {
+    padding: 5px 40px;
+    height: fit-content;
+    border: solid white 1px;
+    color: #FFF;
+    text-align: center;
+    font-family: Poiret One;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    word-wrap: normal;
+    position: relative;
+    width: 7vw;
+    transition: 0.3s;
+  }
+
+  .check-dates:hover {
+    background-color: rgba(255, 255, 255, 0.185);
+    transition: 0.3s;
+    cursor: crosshair;
+  }
+
+  .check-dates:hover::after { 
+    transition: 0.3s;
+    content: attr(data-title); 
+    color: white;
+    position: absolute; 
+    width: 14vw;
+    right: calc(50% - 14vw / 2);
+    bottom: -40px;
+    z-index: 1; 
+    font-size: 15px;
+    text-align: center;
+   }
+  
+  .loader {
+    width:35px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 1px; 
+    background: conic-gradient(#0000,var(--c)) content-box;
+    --_m:
+      repeating-conic-gradient(#0000 0deg,
+         #000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
+         #0000     calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
+      radial-gradient(farthest-side,#0000 calc(98% - var(--b)),#000 calc(100% - var(--b)));
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+    -webkit-mask-composite: destination-in;
+            mask-composite: intersect;
+    animation: load 1s infinite steps(var(--n));
+  }
+  @keyframes load {to{transform: rotate(1turn)}}
+  
+  .galery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .control-elem {
+    background-color: rgba(255, 255, 255, 0.616);
+    border-radius: 100px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .current {
+    background-color: white;
+  }
+
+  .about-btn {
+    text-decoration: none;
+    color: white;
+    cursor: crosshair;
+  }
+  .footer {
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0 0 1vh 0;
+  }
+
+  #map > ymaps {
+    border-radius: 20px;
+    overflow: hidden;
+    }
+
+
+
+
+
+
+  .book_info {
+    width: 60vw;
+    height: 70vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 0 3vw;
+    box-sizing: border-box;
+    overflow: scroll;
+  }
+
+  .close_btn {
+    display: flex;
+    width: 40vw;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .close_btn_img:hover {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    cursor: crosshair;
+  }
+
+  .header {
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 50px;
+  }
+
+  .dates_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    border: solid 2px white;
+    border-radius: 5px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+  }
+
+  .arrive_depart_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+  .info-text {
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: left;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 25px;
+  }
+  
+  .guest_num {
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 25px;
+  }
+
+  .guests_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .guest {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    border: solid 2px white;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  .guest_info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+  .info {
+    width: 300px;
+  }
+}
+
+
+@media (min-width: 1400px) and (max-width: 1850px) {
+  .dates_not_available_win__background {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .dates_not_available_win__win {
+    width: 700px;
+    height: fit-content;
+    padding: 20px 40px;
+    background-color: rgb(50, 50, 50);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 15px;
+    gap: 30px;
+  }
+  .dates_not_available_win__mess {
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .dates_not_available_win__btn {
+    padding: 5px 40px;
+    height: fit-content;
+    border: solid white 1px;
+    color: #FFF;
+    text-align: center;
+    font-family: Poiret One, sans-serif;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    word-wrap: normal;
+    position: relative;
+    transition: 0.3s;
+  }
+
+  .dates_not_available_win__btn:hover {
+    background-color: rgba(255, 255, 255, 0.185);
+    transition: 0.3s;
+    cursor: crosshair;
+  }
+
+  .background {
+    background: url("../images/background.png") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    /* justify-content: space-between; */
+  }
+
+  .mobile__container {
+    display: none;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10vh;
+    height: 100%;
+    color: white;
+  }
+  .link_img {
+    width: 40px;
+    height: 40px;
+  }
+  .link_img:hover {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    cursor: crosshair;
+  }
+
+  @keyframes shake {
+    10%, 90% {
+      transform: rotate(10deg) scale(1.2);
+    }
+    
+    20%, 80% {
+      transform: rotate(10deg) scale(1.2);
+    }
+  
+    30%, 50%, 70% {
+      transform: rotate(-10deg) scale(1.2);
+    }
+  
+    40%, 60% {
+      transform: rotate(10deg) scale(1.2);
+    }
+  }
+
+  .container {
+    width: 90vw;
+    background-color: rgba(255, 228, 196, 0);
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7vh;
+    padding-top: 3vh;
+  }
+
+  .galery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+  }
+  
+
+  .menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .left-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+  }
+
+  .right-part {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-part {
+    position: relative;
+    padding: 0 20px;
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 2vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 7.7px;
+    border-radius: 5px;
+  }
+
+  .menu-part::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #fffafa;
+    transition: 0.4s;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .menu-part:hover:after {
+    width: 100%;
+  }
+
+  .menu-part:hover {
+    cursor: crosshair;
+    transition: 0.2s;
+  }
+
+  .lang {
+    font-size: 20px;
+  }
+
+  .main-part {
+    width: 100%;
+    padding: 0 2vw;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4vw;
+  }
+
+  .about-block {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    width: 50vw;
+  }
+
+  .bottom-part {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1vw;
+  }
+
+  .dates {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .dates-check {
+    background-color: #53515185;
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    font-size: 20px;
+  }
+  .dates-check {
+    cursor: crosshair;
+  }
+
+  .persons {
+    background-color: #53515185;
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    width: 100px;
+  }
+  .persons:hover {
+    cursor: crosshair;
+  }
+
+
+  .galery-image {
+    width: 30vw;
+    min-width: 300px;
+    height: 30vw;
+  }
+  .logo {
+    color: #FFF;
+    font-family: Italiana;
+    font-size: max(9vw, 100px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 1400px;
+    word-wrap: break-word;
+  }
+
+  .about {
+    color: #FFF;
+    font-family: Poiret One;
+    max-width: 1100px;
+    width: 40vw;
+    word-wrap: break-word;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 118.75%; /* 57px */
+    letter-spacing: 8px;
+  }
+
+  .check-dates {
+    padding: 5px 40px;
+    height: fit-content;
+    border: solid white 1px;
+    color: #FFF;
+    text-align: center;
+    font-family: Poiret One;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    word-wrap: normal;
+    position: relative;
+    width: 7vw;
+    transition: 0.3s;
+  }
+
+  .check-dates:hover {
+    background-color: rgba(255, 255, 255, 0.185);
+    transition: 0.3s;
+    cursor: crosshair;
+  }
+
+  .check-dates:hover::after { 
+    transition: 0.3s;
+    content: attr(data-title); 
+    color: white;
+    position: absolute; 
+    width: 14vw;
+    right: calc(50% - 14vw / 2);
+    bottom: -40px;
+    z-index: 1; 
+    font-size: 10px;
+    text-align: center;
+   }
+  
+  .loader {
+
+    width:25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 1px; 
+    background: conic-gradient(#0000,var(--c)) content-box;
+    --_m:
+      repeating-conic-gradient(#0000 0deg,
+         #000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
+         #0000     calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
+      radial-gradient(farthest-side,#0000 calc(98% - var(--b)),#000 calc(100% - var(--b)));
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+    -webkit-mask-composite: destination-in;
+            mask-composite: intersect;
+    animation: load 1s infinite steps(var(--n));
+  }
+  @keyframes load {to{transform: rotate(1turn)}}
+  
+  .galery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .control-elem {
+    background-color: rgba(255, 255, 255, 0.616);
+    border-radius: 100px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .current {
+    background-color: white;
+  }
+
+  .about-btn {
+    text-decoration: none;
+    color: white;
+    cursor: crosshair;
+  }
+  .footer {
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0 0 1vh 0;
+  }
+
+  #map > ymaps {
+    border-radius: 20px;
+    overflow: hidden;
+    }
+
+
+
+
+
+
+  .book_info {
+    width: 60vw;
+    height: 70vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 0 3vw;
+    box-sizing: border-box;
+    overflow: scroll;
+  }
+
+  .close_btn {
+    display: flex;
+    width: 40vw;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .close_btn_img:hover {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    cursor: crosshair;
+  }
+
+  .header {
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 50px;
+  }
+
+  .dates_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    border: solid 2px white;
+    border-radius: 5px;
+    padding: 20px 20px;
+    box-sizing: border-box;
+  }
+
+  .arrive_depart_info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+  }
+
+  .info-text {
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: left;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 25px;
+  }
+  
+  .guest_num {
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 25px;
+  }
+
+  .guests_info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .guest {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    border: solid 2px white;
+    padding: 20px 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  .guest_info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+  .info {
+    width: 300px;
+  }
+}
+
+
+@media (min-width: 1000px) and (max-width: 1400px) {
+  .background {
+    background: url("../images/background.png") no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mobile__container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    gap: 5vh;
+    padding-top: 3vh;
+  }
+
+  .container {
+    display: none;
+  }
+
+  .mobile__menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile__right-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: right;
+    color: white;
+  }
+  .menu-icon {
+    width: 50px;
+  }
+
+  .left-part {
+    display: none;
+  }
+
+  .menu-part {
+    position: relative;
+    padding: 0 20px;
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 7.7px;
+    border-radius: 5px;
+  }
+
+  .menu-part::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #fffafa;
+    transition: 0.4s;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .menu-part:hover:after {
+    width: 100%;
+  }
+
+  .menu-part:hover {
+    cursor: crosshair;
+    transition: 0.2s;
+  }
+
+  .mobile__main-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5vh;
+  }
+
+  .logo {
+    color: #FFF;
+    font-family: Italiana;
+    font-size: max(9vw, 200px);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 1400px;
+    word-wrap: break-word;
+    margin: 0 5vw;
+  }
+
+  .dates {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .date-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  .comment {
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 50px;
+  }
+
+  .dates-check {
+    background-color: #53515185;
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    font-size: 50px;
+  }
+  .dates-check {
+    cursor: crosshair;
+  }
+
+  .persons {
+    background-color: #53515185;
+    color:white;
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    width: 100px;
+  }
+
+  .persons:hover {
+    cursor: crosshair;
+  }
+
+  .check-dates {
+    padding: 5px 40px;
+    height: fit-content;
+    border: solid white 1px;
+    color: #FFF;
+    text-align: center;
+    font-family: Poiret One;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    word-wrap: normal;
+    position: relative;
+    width: 100%;
+    transition: 0.3s;
+  }
+
+  .check-dates:hover {
+    background-color: rgba(255, 255, 255, 0.185);
+    transition: 0.3s;
+    cursor: crosshair;
+  }
+
+  .check-dates:hover::after { 
+    transition: 0.3s;
+    content: attr(data-title); 
+    color: white;
+    position: absolute; 
+    width: 14vw;
+    right: calc(50% - 14vw / 2);
+    bottom: -40px;
+    z-index: 1; 
+    font-size: 15px;
+    text-align: center;
+   }
+
+
+
+  .footer {
+    font-family: 'Poiret One', sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0 0 1vh 0;
+  }
+
+}
