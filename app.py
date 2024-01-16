@@ -8,6 +8,8 @@ app.secret_key = '1F7VkTpXpSBo9P6Oskv9Kq$23QwD9FG44U'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hotel.db'
 db = SQLAlchemy(app)
 
+with app.app_context():
+    db.create_all()
 
 class Guests(db.Model):
     __tableName__ = 'guests'
