@@ -61,14 +61,14 @@ def database_check():
     db.session.commit()
 
 
-
 @app.route("/api/v1.0/check_dates", methods=["GET", "POST"])
 def check_dates():
     _arr = datetime.date(*map(int, request.form.get("arr").split("-")))
     _dep = datetime.date(*map(int, request.form.get("dep").split("-")))
     _per = request.form.get("per")
     if any(True if date.arr <= _arr < date.dep else False for date in Dates.query.all()) or \
-            any(True if date.arr <= _dep <= date.dep else False for date in Dates.query.all()):
+            any(True if date.arr < _dep <= date.dep else False for date in Dates.query.all()) or \
+            any(True if _arr <= date.arr and _dep >= date.dep else False for date in Dates.query.all()):
         return {"status": "not_available"}
     else:
         return {"status": "success"}

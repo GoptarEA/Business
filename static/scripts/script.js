@@ -61,10 +61,10 @@ async function checkDates() {
         },
         10000);
         document.querySelector(".loader").style.opacity = "1";
-        formData.append("dep", _arr);
-        formData.append("arr", _dep);
+        formData.append("dep", _dep);
+        formData.append("arr", _arr);
         formData.append("per", _per);
-        let response = await fetch("http://172.20.65.36:8080/api/v1.0/check_dates",
+        let response = await fetch("http://192.168.1.7:8080/api/v1.0/check_dates",
             {
                 method: "POST",
                 body: formData
