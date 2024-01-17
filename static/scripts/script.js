@@ -48,14 +48,23 @@ async function checkDates() {
     let formData = new FormData();
     let _arr = document.getElementById("arrive_date").value;
     let _dep = document.getElementById("departure_date").value;
+    let _per = document.getElementById("pers_num").value;
     if (_arr === _dep || _dep < _arr) {
         document.getElementById("dates_not_available_win__background").style.display = "flex";
         document.getElementById("dates_not_available_win__mess").innerText = "Даты заданы некорректно!";
     } else {
+        let timer = setTimeout(() => {
+        document.getElementById("dates_not_available_win__background").style.display = "flex";
+        document.getElementById("dates_not_available_win__mess").innerText = "Сервис недоступен, повторите запрос позднее";
+        document.getElementById("dates_not_available_win__btn").innerText = "Хорошо, попробую еще раз чуть позже!"
+        document.querySelector(".loader").style.opacity = "0";
+        },
+        10000);
         document.querySelector(".loader").style.opacity = "1";
         formData.append("dep", _arr);
         formData.append("arr", _dep);
-        let response = await fetch("http://192.168.1.13:8080/api/v1.0/check_dates",
+        formData.append("per", _per);
+        let response = await fetch("http://172.20.65.36:8080/api/v1.0/check_dates",
             {
                 method: "POST",
                 body: formData
@@ -65,9 +74,11 @@ async function checkDates() {
             document.getElementById("check-dates").style.display = "none";
             document.getElementById("open-book-win").style.display = "block";
             document.querySelector(".loader").style.opacity = "0";
+            clearTimeout(timer);
         } else {
             document.getElementById("dates_not_available_win__background").style.display = "flex";
             document.querySelector(".loader").style.opacity = "0";
+            clearTimeout(timer);
         }
     }
 }
@@ -82,6 +93,7 @@ function closeNotAvailableWin() {
     document.getElementById("dates_not_available_win__mess").innerText = "Сожалеем, но выбранные Вами даты\n" +
         "                на данный момент недоступны для бронирования :( Попробуйте выбрать другие даты,\n" +
         "                будем рады видеть Вас в числе наших гостей.";
+    document.getElementById("dates_not_available_win__btn").innerText = "Понял, выберу другие даты!";
 }
 
 document.getElementById('arrive_date').valueAsDate = new Date();
