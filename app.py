@@ -2,6 +2,7 @@ import datetime
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import ForeignKey
+import CORS
 
 app = Flask(__name__)
 
@@ -74,6 +75,20 @@ def check_dates():
         return {"status": "success"}
 
 
+@app.route("/api/v1.0/get_booked_dates", methods=["GET", "POST"])
+def get_booked_dates():
+    _year = request.form.get("year")
+    _month = request.form.get("month")
+    print(_year, _month)
+    _booked_dates = []
+    for date in Dates.query.all():
+        if int(date.arr.month) == _month and int(date.arr.year) == _year:
+            _booked_dates.extend([day for day in range(date.arr.day, date.dep.day)])
+    print({"dates": _booked_dates})
+    return {"dates": list(set(_booked_dates))}
+
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -88,5 +103,5 @@ if __name__ == "__main__":
     # with app.app_context():
     #     db.create_all()
     #     database_check()
-    app.run(debug=True, host="0.0.0.0", port=8080)
+    app.run(debug=True, host="0.0.0.0", port=80)
 
