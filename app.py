@@ -2,13 +2,18 @@ import datetime
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import ForeignKey
-import CORS
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 
 app.secret_key = '1F7VkTpXpSBo9P6Oskv9Kq$23QwD9FG44U'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hotel.db'
 db = SQLAlchemy(app)
+
+
 
 with app.app_context():
     db.create_all()
@@ -82,7 +87,7 @@ def get_booked_dates():
     print(_year, _month)
     _booked_dates = []
     for date in Dates.query.all():
-        if int(date.arr.month) == _month and int(date.arr.year) == _year:
+        if int(date.arr.month) == int(_month) and int(date.arr.year) == int(_year):
             _booked_dates.extend([day for day in range(date.arr.day, date.dep.day)])
     print({"dates": _booked_dates})
     return {"dates": list(set(_booked_dates))}
