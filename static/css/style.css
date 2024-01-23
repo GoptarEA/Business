@@ -1198,5 +1198,144 @@ body, html {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 0 0 1vh 0;
   }
+}
+
+.date-calendar-container {
+  position: relative;
+}
+
+.calendar {
+    font-family: Poiret One, sans-serif;
+    padding: 10px;
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: -370px;
+    left: -25%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    height: fit-content;
+    background-color: #CCC;
+    gap: 10px;
+    cursor: default;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.calendar-header {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    font-size: 25px;
+}
+
+.select {
+    border-radius: 5px;
+    font-size: 25px;
+    font-family: Poiret One, sans-serif;
+    font-weight: bold;
+}
+
+
+.days-table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.days-table-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    width: 100%;
+    align-items: center;
 
 }
+
+.days-table-header-item {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.dates-table {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    background-color: rgb(141, 141, 145);
+    width: 100%;
+    height: 250px;
+    align-items: center;
+    border-radius: 5px;
+    gap: 5px;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.day-prot {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5px;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+.day-prot:hover {
+    background-color: #CCC;
+    transition: 0.2s;
+    cursor: crosshair;
+}
+
+
+.current {
+    background-color: #e23434;
+}
+
+.booked {
+    background-color: #CCC;
+    cursor: not-allowed !important;
+}
+
+.book-day {
+    background-color: rgb(97, 97, 96);
+}
+
+.book-day:hover {
+    background-color: rgb(97, 97, 96) !important;
+}
+
+.last-booked-day {
+    position: relative;
+    cursor: help !important;
+    transition: 0.2s;
+}
+
+
+.last-booked-day:hover::after {
+    position: absolute;
+    content: "Возможен заезд";
+    left: -50%;
+    top: -150%;
+    background-color: #0a0a0acc;
+    transition: 0.2s;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.arrow {
+    transition: 0.2s;
+}
+
+.arrow:hover {
+    transition: 0.2s;
+    transform: scale(1.3);
+    cursor:crosshair;
+}
+

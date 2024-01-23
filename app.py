@@ -14,11 +14,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hotel.db'
 db = SQLAlchemy(app)
 
 
-
-with app.app_context():
-    db.create_all()
-
-
 class Guests(db.Model):
     __tableName__ = 'guests'
     id = db.Column(db.Integer, primary_key=True)
@@ -55,16 +50,9 @@ class Reservations(db.Model):
     person_id = db.Column('person_id', db.Integer, ForeignKey("guests.id"), nullable=False)
 
 
-
-def database_check():
-    u = Dates(
-        datetime.date(2024, 1, 16),
-        datetime.date(2024, 1, 18),
-        2,
-        1)
-    db.session.add(u)
-    db.session.flush()
-    db.session.commit()
+@app.route("/api/v1.0/reserve", methods=["GET", "POST"])
+def reserve():
+    pass
 
 
 @app.route("/api/v1.0/check_dates", methods=["GET", "POST"])
@@ -93,7 +81,6 @@ def get_booked_dates():
     return {"dates": list(set(_booked_dates))}
 
 
-
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -105,8 +92,5 @@ def booking():
 
 
 if __name__ == "__main__":
-    # with app.app_context():
-    #     db.create_all()
-    #     database_check()
     app.run(debug=True, host="0.0.0.0", port=80)
 
