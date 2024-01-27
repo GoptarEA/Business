@@ -15,181 +15,182 @@
 </head>
 
 <body>
-    <div class="background">
-<!--        <div class="mobile__container">-->
-<!--            <div class="mobile__menu">-->
-<!--                <div class="open_left_part">-->
-<!--                    <img src="{{ url_for('static', filename='/images/menu-icon.svg') }}" alt="" class="menu-icon">-->
-<!--                </div>-->
-<!--                <div class="mobile__right-part">-->
-<!--                    <div class="menu-part lang">eng</div>-->
-<!--                </div>-->
-<!--                <div class="left-part">-->
+<div class="background">
+    <!--        <div class="mobile__container">-->
+    <!--            <div class="mobile__menu">-->
+    <!--                <div class="open_left_part">-->
+    <!--                    <img src="{{ url_for('static', filename='/images/menu-icon.svg') }}" alt="" class="menu-icon">-->
+    <!--                </div>-->
+    <!--                <div class="mobile__right-part">-->
+    <!--                    <div class="menu-part lang">eng</div>-->
+    <!--                </div>-->
+    <!--                <div class="left-part">-->
 
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="mobile__main-part">-->
-<!--                <div class="logo">Dobrilovo Village</div>-->
-<!--                <div class="dates">-->
-<!--                    <div class="date-row">-->
-<!--                        <div class="comment">Дата заезда:</div>-->
-<!--                    <input type="date" class="dates-check" id="mob__arrive_date" onchange="check_back()">-->
-<!--                    </div>-->
-<!--                    <div class="date-row">-->
-<!--                        <div class="comment">Дата выезда:</div>-->
-<!--                        <input type="date" class="dates-check" id="mob__departure_date" onchange="check_back()">-->
-<!--                    </div>-->
-<!--                    <div class="date-row">-->
-<!--                        <div class="comment">Количество гостей:</div>-->
-<!--                        <input type="number" class="persons" value="2" min="1" max="4" id="mob__pers_num">-->
-<!--                    </div>-->
-<!--                    <div class="date-row">-->
-<!--                        <div class="check-dates" onclick="checkDates()" id="mob__check-dates">Проверить даты</div>-->
-<!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="mobile__main-part">-->
+    <!--                <div class="logo">Dobrilovo Village</div>-->
+    <!--                <div class="dates">-->
+    <!--                    <div class="date-row">-->
+    <!--                        <div class="comment">Дата заезда:</div>-->
+    <!--                    <input type="date" class="dates-check" id="mob__arrive_date" onchange="check_back()">-->
+    <!--                    </div>-->
+    <!--                    <div class="date-row">-->
+    <!--                        <div class="comment">Дата выезда:</div>-->
+    <!--                        <input type="date" class="dates-check" id="mob__departure_date" onchange="check_back()">-->
+    <!--                    </div>-->
+    <!--                    <div class="date-row">-->
+    <!--                        <div class="comment">Количество гостей:</div>-->
+    <!--                        <input type="number" class="persons" value="2" min="1" max="4" id="mob__pers_num">-->
+    <!--                    </div>-->
+    <!--                    <div class="date-row">-->
+    <!--                        <div class="check-dates" onclick="checkDates()" id="mob__check-dates">Проверить даты</div>-->
+    <!--                    </div>-->
 
-<!--                   -->
-<!--                    <div -->
-<!--                        class="check-dates" -->
-<!--                        id="mob__open-book-win"-->
-<!--                        style="display:none;width:14vw;"-->
-<!--                        data-title="Потребуется внести предоплату в размере 30%">-->
-<!--                    Свободно/Забронировать?-->
-<!--                    </div>-->
-<!--                    <div class="loader" style="&#45;&#45;b: 10px;&#45;&#45;c:#ffffff;&#45;&#45;n:15;&#45;&#45;g:10deg;opacity:0;"></div>-->
-<!--                </div>-->
-<!--            </div>    -->
-<!--        </div>-->
-        <div class="container">
-            <div class="menu">
-                <div class="left-part">
-                    <div class="menu-part"><a href="galery.html" class="about-btn">Галерея</a></div>
-                    <div class="menu-part"><a href="{{ url_for('booking') }}" class="about-btn">Забронировать</a></div>
-                    <div class="menu-part"><a href="about.html" class="about-btn">О нас</a></div>
-                </div>
-                <div class="right-part">
-                    <div class="menu-part lang">eng</div>
+    <!--                   -->
+    <!--                    <div -->
+    <!--                        class="check-dates" -->
+    <!--                        id="mob__open-book-win"-->
+    <!--                        style="display:none;width:14vw;"-->
+    <!--                        data-title="Потребуется внести предоплату в размере 30%">-->
+    <!--                    Свободно/Забронировать?-->
+    <!--                    </div>-->
+    <!--                    <div class="loader" style="&#45;&#45;b: 10px;&#45;&#45;c:#ffffff;&#45;&#45;n:15;&#45;&#45;g:10deg;opacity:0;"></div>-->
+    <!--                </div>-->
+    <!--            </div>    -->
+    <!--        </div>-->
+    <div class="container">
+        <div class="menu">
+            <div class="left-part">
+                <div class="menu-part"><a href="galery.html" class="about-btn">Галерея</a></div>
+                <div class="menu-part"><a href="{{ url_for('booking') }}" class="about-btn">Забронировать</a></div>
+                <div class="menu-part"><a href="about.html" class="about-btn">О нас</a></div>
+            </div>
+            <div class="right-part">
+                <div class="menu-part lang">eng</div>
+            </div>
+        </div>
+        <div class="main-part">
+            <div class="galery">
+                <img src="{{ url_for('static', filename='/images/galery/0.png') }}" alt="фото" class="galery-image">
+                <div class="pagination">
+                    <div class="control-elem"></div>
+                    <div class="control-elem current"></div>
+                    <div class="control-elem"></div>
                 </div>
             </div>
-            <div class="main-part">
-                <div class="galery">
-                    <img src="{{ url_for('static', filename='/images/galery/0.png') }}" alt="фото" class="galery-image">
-                    <div class="pagination">
-                        <div class="control-elem"></div>
-                        <div class="control-elem current"></div>
-                        <div class="control-elem"></div>
+            <div class="about-block">
+                <div class="logo">Dobrilovo Village</div>
+                <div class="bottom-part">
+                    <div class="about">
+                        Отдых в Dobrilovo Village - сoвpeменный, cтильный и
+                        до мелoчeй пpoдумaнный гoстевой домик нa cклoне с
+                        живописными видaми, баней и мaнгaльнoй зoнoй
                     </div>
-                </div>
-                <div class="about-block">
-                    <div class="logo">Dobrilovo Village</div>
-                    <div class="bottom-part">
-                        <div class="about">
-                            Отдых в Dobrilovo Village - сoвpeменный, cтильный и
-                            до мелoчeй пpoдумaнный гoстевой домик нa cклoне с
-                            живописными видaми, баней и мaнгaльнoй зoнoй
-                        </div>
-                        <div class="dates">
-                            <div class="date-calendar-container">
-                                <input type="date" class="dates-check" id="arrive_date" onchange="check_back()" onclick="testFunc(event)">
-                                 <div class="calendar" id="calendar">
-        <div class="calendar-header">
-            <div class="arrow" id="left_arrow" onclick="prevMonth()">
-                <img src="{{ url_for('static', filename='/images/arrow_left.svg') }}" alt="left arrow">
-            </div>
-            <div class="month-picker">
-                <select class="select" id="month-select" onchange="selectChange()">
-                    <option value="0" selected>Январь</option>
-                    <option value="1" >Февраль</option>
-                    <option value="2">Март</option>
-                    <option value="3">Апрель</option>
-                    <option value="4">Май</option>
-                    <option value="5">Июнь</option>
-                    <option value="6">Июль</option>
-                    <option value="7">Август</option>
-                    <option value="8">Сентябрь</option>
-                    <option value="9">Октярь</option>
-                    <option value="10">Ноябрь</option>
-                    <option value="11">Декабрь</option>
-                </select>
-            </div>
-            <div class="year-picker">
-                <select class="select" id="year-select" onchange="selectChange()">
-                    <option value="2024" selected>2024</option>
-                    <option value="2025">2025</option>
-                </select>
-            </div>
-            <div class="arrow" id="right_arrow" onclick="nextMonth()">
-                <img src="{{ url_for('static', filename='/images/arrow_right.svg') }}" alt="right arrow">
-            </div>
-        </div>
-        <div class="days-table">
-            <div class="days-table-header">
-                <div class="days-table-header-item">
-                    пн
-                </div>
-                <div class="days-table-header-item">
-                    вт
-                </div>
-                <div class="days-table-header-item">
-                    ср
-                </div>
-                <div class="days-table-header-item">
-                    чт
-                </div>
-                <div class="days-table-header-item">
-                    пт
-                </div>
-                <div class="days-table-header-item">
-                    сб
-                </div>
-                <div class="days-table-header-item">
-                    вс
-                </div>
-            </div>
-            <div class="dates-table" id="dates-table">
+                    <form class="dates" method="post">
+                        <div class="date-calendar-container">
+                            <input type="date" class="dates-check" id="arrive_date" name="arr" onchange="check_back()" onclick="testFunc(event)">
+                            <div class="calendar" id="calendar">
+                                <div class="calendar-header">
+                                    <div class="arrow" id="left_arrow" onclick="prevMonth()">
+                                        <img src="{{ url_for('static', filename='/images/arrow_left.svg') }}" alt="left arrow">
+                                    </div>
+                                    <div class="month-picker">
+                                        <select class="select" id="month-select" onchange="selectChange()">
+                                            <option value="0" selected>Январь</option>
+                                            <option value="1" >Февраль</option>
+                                            <option value="2">Март</option>
+                                            <option value="3">Апрель</option>
+                                            <option value="4">Май</option>
+                                            <option value="5">Июнь</option>
+                                            <option value="6">Июль</option>
+                                            <option value="7">Август</option>
+                                            <option value="8">Сентябрь</option>
+                                            <option value="9">Октярь</option>
+                                            <option value="10">Ноябрь</option>
+                                            <option value="11">Декабрь</option>
+                                        </select>
+                                    </div>
+                                    <div class="year-picker">
+                                        <select class="select" id="year-select" onchange="selectChange()">
+                                            <option value="2024" selected>2024</option>
+                                            <option value="2025">2025</option>
+                                        </select>
+                                    </div>
+                                    <div class="arrow" id="right_arrow" onclick="nextMonth()">
+                                        <img src="{{ url_for('static', filename='/images/arrow_right.svg') }}" alt="right arrow">
+                                    </div>
+                                </div>
+                                <div class="days-table">
+                                    <div class="days-table-header">
+                                        <div class="days-table-header-item">
+                                            пн
+                                        </div>
+                                        <div class="days-table-header-item">
+                                            вт
+                                        </div>
+                                        <div class="days-table-header-item">
+                                            ср
+                                        </div>
+                                        <div class="days-table-header-item">
+                                            чт
+                                        </div>
+                                        <div class="days-table-header-item">
+                                            пт
+                                        </div>
+                                        <div class="days-table-header-item">
+                                            сб
+                                        </div>
+                                        <div class="days-table-header-item">
+                                            вс
+                                        </div>
+                                    </div>
+                                    <div class="dates-table" id="dates-table">
 
-            </div>
-        </div>
-    </div>
+                                    </div>
+                                </div>
                             </div>
-
-                            <input type="date" class="dates-check" id="departure_date" onchange="check_back()">
-                            <input type="number" class="persons" value="2" min="1" max="4" id="pers_num">
-                            <div class="check-dates" onclick="checkDates()" id="check-dates">Проверить даты</div>
-                            <div 
-                                class="check-dates" 
-                                id="open-book-win" 
-                                style="display:none;width:14vw;"
-                                data-title="Потребуется внести предоплату в размере 30%">
-                                <a href="{{ url_for('booking', arr='12.12', dep='13.12') }}" style="text-decoration: none;color:white;cursor:crosshair;">Свободно/Забронировать?</a>
-
-                            </div>
-                            <div class="loader" style="--b: 10px;--c:#ffffff;--n:15;--g:10deg;opacity:0;"></div>
                         </div>
-                    </div>
-                </div>
-                <div class="contacts">
-                    <div class="link"><img src="{{ url_for('static', filename='/images/inst.png') }}" alt="inst" class="link_img"></div>
-                    <div class="link"><img src="{{ url_for('static', filename='/images/tele.png') }}" alt="tele" class="link_img"></div>
-                    <div class="link"><img src="{{ url_for('static', filename='/images/yandex.png') }}" alt="yandex" class="link_img"></div>
+
+                        <input type="date" class="dates-check" id="departure_date" name="dep" onchange="check_back()">
+                        <input type="number" class="persons" value="2" min="1" max="4" id="pers_num" name="pers">
+                        <div class="check-dates" onclick="checkDates()" id="check-dates">Проверить даты</div>
+                        <button
+                                class="check-dates"
+                                id="open-book-win"
+                                style="display:none;width:15vw;"
+                                data-title="Потребуется внести предоплату в размере 30%"
+                                type="submit">
+                            Свободно/Забронировать?
+                        </button>
+
+                        <div class="loader" style="--b: 10px;--c:#ffffff;--n:15;--g:10deg;opacity:0;"></div>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="footer">
-            ИП Гоптарь Евгений Андреевич, 2024
+            <div class="contacts">
+                <div class="link"><img src="{{ url_for('static', filename='/images/inst.png') }}" alt="inst" class="link_img"></div>
+                <div class="link"><img src="{{ url_for('static', filename='/images/tele.png') }}" alt="tele" class="link_img"></div>
+                <div class="link"><img src="{{ url_for('static', filename='/images/yandex.png') }}" alt="yandex" class="link_img"></div>
+            </div>
         </div>
     </div>
-    <div class="dates_not_available_win__background" id="dates_not_available_win__background" style="display: none;">
-        <div class="dates_not_available_win__win">
-            <div class="dates_not_available_win__mess" id="dates_not_available_win__mess">
-                Сожалеем, но выбранные Вами даты
-                на данный момент недоступны для бронирования :( Попробуйте выбрать другие даты,
-                будем рады видеть Вас в числе наших гостей.
-            </div>
-            <div class="dates_not_available_win__btn" id="dates_not_available_win__btn" onclick="closeNotAvailableWin()">
-                Понял, выберу другие даты!
-            </div>
+    <div class="footer">
+        ИП Гоптарь Евгений Андреевич, 2024
+    </div>
+</div>
+<div class="dates_not_available_win__background" id="dates_not_available_win__background" style="display: none;">
+    <div class="dates_not_available_win__win">
+        <div class="dates_not_available_win__mess" id="dates_not_available_win__mess">
+            Сожалеем, но выбранные Вами даты
+            на данный момент недоступны для бронирования :( Попробуйте выбрать другие даты,
+            будем рады видеть Вас в числе наших гостей.
+        </div>
+        <div class="dates_not_available_win__btn" id="dates_not_available_win__btn" onclick="closeNotAvailableWin()">
+            Понял, выберу другие даты!
         </div>
     </div>
+</div>
 
 </body>
 </html>

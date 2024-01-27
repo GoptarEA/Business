@@ -13,10 +13,10 @@ async function updateDates(_year, _month) {
   formData.append("year", _year);
   formData.append("month", Number(_month) + 1);
   let response = await fetch("http://192.168.1.8:80/api/v1.0/get_booked_dates",
-    {
+      {
         method: "POST",
         body: formData
-    });
+      });
   let result = await response.json();
   let booked_dates = Array.from(result["dates"]);
 
@@ -44,7 +44,7 @@ async function updateDates(_year, _month) {
     }
 
     if (_now.getFullYear() === _local.getFullYear() &&
-    _now.getMonth() === _local.getMonth() && _now.getDate() === _local.getDate()) {
+        _now.getMonth() === _local.getMonth() && _now.getDate() === _local.getDate()) {
       _cur.classList.add("current");
     }
     if (_now.getDate() > i + 1 && _now.getMonth() === _local.getMonth() &&_now.getFullYear() === _local.getFullYear()) {
@@ -100,9 +100,9 @@ function testFunc(event){
 document.onclick = (event) => {
   const withinBoundaries = event.composedPath().includes( document.getElementById("calendar"));
 
-	if ( ! withinBoundaries && event.target !==  document.getElementById("arrive_date")) {
+  if ( ! withinBoundaries && event.target !==  document.getElementById("arrive_date")) {
     document.getElementById("calendar").style.display = 'none';
-	}
+  }
 }
 
 

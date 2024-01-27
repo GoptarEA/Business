@@ -1,8 +1,10 @@
 import datetime
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import ForeignKey
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
+from emails import send_email
+import smtplib
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -81,14 +83,30 @@ def get_booked_dates():
     return {"dates": list(set(_booked_dates))}
 
 
-@app.route("/")
+@app.route("/", methods=["POST", "GET"])
 def index():
+    if request.method == "POST":
+        _arr = datetime.date(*map(int, request.form.get("arr").split("-")))
+        _dep = datetime.date(*map(int, request.form.get("dep").split("-")))
+        return render_template("booking.html",
+                               pers=int(request.form.get("pers")),
+                               arr=request.form.get("arr"),
+                               dep=request.form.get("dep"),
+                               start_price=(_dep - _arr).days * 10_000)
     return render_template("index.html")
 
+@app.route("/payment")
+def payment():
+    send_email()
+    return render_template("payment.html")
 
-@app.route("/booking")
+
+@app.route("/booking", methods=["GET"])
 def booking():
+    print(request.args.get("dep"))
     return render_template("booking.html")
+
+
 
 
 if __name__ == "__main__":

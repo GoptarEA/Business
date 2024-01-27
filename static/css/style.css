@@ -128,15 +128,15 @@ body, html {
     10%, 90% {
       transform: rotate(10deg) scale(1.2);
     }
-    
+
     20%, 80% {
       transform: rotate(10deg) scale(1.2);
     }
-  
+
     30%, 50%, 70% {
       transform: rotate(-10deg) scale(1.2);
     }
-  
+
     40%, 60% {
       transform: rotate(10deg) scale(1.2);
     }
@@ -160,7 +160,7 @@ body, html {
     justify-content: center;
     width: 90vw;
   }
-  
+
 
   .menu {
     width: 100%;
@@ -315,7 +315,7 @@ body, html {
     border: solid white 1px;
     color: #FFF;
     text-align: center;
-    font-family: Poiret One;
+    font-family: Poiret One, serif;
     font-size: 1vw;
     font-style: normal;
     font-weight: 400;
@@ -324,6 +324,7 @@ body, html {
     position: relative;
     width: 7vw;
     transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0);
   }
 
   .check-dates:hover {
@@ -332,38 +333,38 @@ body, html {
     cursor: crosshair;
   }
 
-  .check-dates:hover::after { 
+  .check-dates:hover::after {
     transition: 0.3s;
-    content: attr(data-title); 
+    content: attr(data-title);
     color: white;
-    position: absolute; 
+    position: absolute;
     width: 14vw;
     right: calc(50% - 14vw / 2);
     bottom: -40px;
-    z-index: 1; 
+    z-index: 1;
     font-size: 15px;
     text-align: center;
-   }
-  
+  }
+
   .loader {
     width:35px;
     aspect-ratio: 1;
     border-radius: 50%;
-    padding: 1px; 
+    padding: 1px;
     background: conic-gradient(#0000,var(--c)) content-box;
     --_m:
-      repeating-conic-gradient(#0000 0deg,
-         #000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
-         #0000     calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
-      radial-gradient(farthest-side,#0000 calc(98% - var(--b)),#000 calc(100% - var(--b)));
+            repeating-conic-gradient(#0000 0deg,
+            #000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
+            #0000     calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
+            radial-gradient(farthest-side,#0000 calc(98% - var(--b)),#000 calc(100% - var(--b)));
     -webkit-mask: var(--_m);
-            mask: var(--_m);
+    mask: var(--_m);
     -webkit-mask-composite: destination-in;
-            mask-composite: intersect;
+    mask-composite: intersect;
     animation: load 1s infinite steps(var(--n));
   }
   @keyframes load {to{transform: rotate(1turn)}}
-  
+
   .galery {
     display: flex;
     flex-direction: column;
@@ -406,7 +407,7 @@ body, html {
   #map > ymaps {
     border-radius: 20px;
     overflow: hidden;
-    }
+  }
 
 
 
@@ -475,7 +476,7 @@ body, html {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 25px;
   }
-  
+
   .guest_num {
     color:white;
     font-family: 'Poiret One', sans-serif;
@@ -611,15 +612,15 @@ body, html {
     10%, 90% {
       transform: rotate(10deg) scale(1.2);
     }
-    
+
     20%, 80% {
       transform: rotate(10deg) scale(1.2);
     }
-  
+
     30%, 50%, 70% {
       transform: rotate(-10deg) scale(1.2);
     }
-  
+
     40%, 60% {
       transform: rotate(10deg) scale(1.2);
     }
@@ -643,7 +644,7 @@ body, html {
     justify-content: center;
     width: 90vw;
   }
-  
+
 
   .menu {
     width: 100%;
@@ -817,39 +818,39 @@ body, html {
     cursor: crosshair;
   }
 
-  .check-dates:hover::after { 
+  .check-dates:hover::after {
     transition: 0.3s;
-    content: attr(data-title); 
+    content: attr(data-title);
     color: white;
-    position: absolute; 
+    position: absolute;
     width: 14vw;
     right: calc(50% - 14vw / 2);
     bottom: -40px;
-    z-index: 1; 
+    z-index: 1;
     font-size: 10px;
     text-align: center;
-   }
-  
+  }
+
   .loader {
 
     width:25px;
     aspect-ratio: 1;
     border-radius: 50%;
-    padding: 1px; 
+    padding: 1px;
     background: conic-gradient(#0000,var(--c)) content-box;
     --_m:
-      repeating-conic-gradient(#0000 0deg,
-         #000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
-         #0000     calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
-      radial-gradient(farthest-side,#0000 calc(98% - var(--b)),#000 calc(100% - var(--b)));
+            repeating-conic-gradient(#0000 0deg,
+            #000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
+            #0000     calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
+            radial-gradient(farthest-side,#0000 calc(98% - var(--b)),#000 calc(100% - var(--b)));
     -webkit-mask: var(--_m);
-            mask: var(--_m);
+    mask: var(--_m);
     -webkit-mask-composite: destination-in;
-            mask-composite: intersect;
+    mask-composite: intersect;
     animation: load 1s infinite steps(var(--n));
   }
   @keyframes load {to{transform: rotate(1turn)}}
-  
+
   .galery {
     display: flex;
     flex-direction: column;
@@ -892,7 +893,7 @@ body, html {
   #map > ymaps {
     border-radius: 20px;
     overflow: hidden;
-    }
+  }
 
 
 
@@ -961,7 +962,7 @@ body, html {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 25px;
   }
-  
+
   .guest_num {
     color:white;
     font-family: 'Poiret One', sans-serif;
@@ -1176,18 +1177,18 @@ body, html {
     cursor: crosshair;
   }
 
-  .check-dates:hover::after { 
+  .check-dates:hover::after {
     transition: 0.3s;
-    content: attr(data-title); 
+    content: attr(data-title);
     color: white;
-    position: absolute; 
+    position: absolute;
     width: 14vw;
     right: calc(50% - 14vw / 2);
     bottom: -40px;
-    z-index: 1; 
+    z-index: 1;
     font-size: 15px;
     text-align: center;
-   }
+  }
 
 
 
@@ -1205,137 +1206,169 @@ body, html {
 }
 
 .calendar {
-    font-family: Poiret One, sans-serif;
-    padding: 10px;
-    display: none;
-    position: absolute;
-    z-index: 1;
-    top: -370px;
-    left: -25%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: fit-content;
-    height: fit-content;
-    background-color: #CCC;
-    gap: 10px;
-    cursor: default;
-    border-radius: 10px;
-    box-sizing: border-box;
+  font-family: Poiret One, sans-serif;
+  padding: 10px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: -370px;
+  left: -25%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: fit-content;
+  height: fit-content;
+  background-color: #CCC;
+  gap: 10px;
+  cursor: default;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .calendar-header {
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    font-size: 25px;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-size: 25px;
 }
 
 .select {
-    border-radius: 5px;
-    font-size: 25px;
-    font-family: Poiret One, sans-serif;
-    font-weight: bold;
+  border-radius: 5px;
+  font-size: 25px;
+  font-family: Poiret One, sans-serif;
+  font-weight: bold;
 }
 
 
 .days-table {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 .days-table-header {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    width: 100%;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+  align-items: center;
 
 }
 
 .days-table-header-item {
-    font-size: 20px;
-    text-align: center;
-    font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .dates-table {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    background-color: rgb(141, 141, 145);
-    width: 100%;
-    height: 250px;
-    align-items: center;
-    border-radius: 5px;
-    gap: 5px;
-    padding: 0 5px;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  background-color: rgb(141, 141, 145);
+  width: 100%;
+  height: 250px;
+  align-items: center;
+  border-radius: 5px;
+  gap: 5px;
+  padding: 0 5px;
+  box-sizing: border-box;
 }
 
 .day-prot {
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 5px;
-    transition: 0.2s;
-    border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px;
+  transition: 0.2s;
+  border-radius: 5px;
 }
 
 .day-prot:hover {
-    background-color: #CCC;
-    transition: 0.2s;
-    cursor: crosshair;
+  background-color: #CCC;
+  transition: 0.2s;
+  cursor: crosshair;
 }
 
 
 .current {
-    background-color: #e23434;
+  background-color: #e23434;
 }
 
 .booked {
-    background-color: #CCC;
-    cursor: not-allowed !important;
+  background-color: #CCC;
+  cursor: not-allowed !important;
 }
 
 .book-day {
-    background-color: rgb(97, 97, 96);
+  background-color: rgb(97, 97, 96);
 }
 
 .book-day:hover {
-    background-color: rgb(97, 97, 96) !important;
+  background-color: rgb(97, 97, 96) !important;
 }
 
 .last-booked-day {
-    position: relative;
-    cursor: help !important;
-    transition: 0.2s;
+  position: relative;
+  cursor: help !important;
+  transition: 0.2s;
 }
 
 
 .last-booked-day:hover::after {
-    position: absolute;
-    content: "Возможен заезд";
-    left: -50%;
-    top: -150%;
-    background-color: #0a0a0acc;
-    transition: 0.2s;
-    border-radius: 5px;
-    padding: 5px 10px;
+  position: absolute;
+  content: "Возможен заезд";
+  left: -50%;
+  top: -150%;
+  background-color: #0a0a0acc;
+  transition: 0.2s;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
 .arrow {
-    transition: 0.2s;
+  transition: 0.2s;
 }
 
 .arrow:hover {
-    transition: 0.2s;
-    transform: scale(1.3);
-    cursor:crosshair;
+  transition: 0.2s;
+  transform: scale(1.3);
+  cursor:crosshair;
 }
 
+
+.properties {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.property {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+}
+
+.booking__left-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.total_price {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5vw;
+}

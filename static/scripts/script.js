@@ -30,8 +30,8 @@ function changePic() {
     imageName++;
     fadeOutEffect(curImage);
     setTimeout(() => curImage.setAttribute(
-        "src",
-        imagePath + imageName % 2 + ".png"),
+            "src",
+            imagePath + imageName % 2 + ".png"),
         400)
     setTimeout(() => appearEffect(curImage), 400);
     let cur = document.querySelector(".current");
@@ -54,12 +54,12 @@ async function checkDates() {
         document.getElementById("dates_not_available_win__mess").innerText = "Даты заданы некорректно!";
     } else {
         let timer = setTimeout(() => {
-        document.getElementById("dates_not_available_win__background").style.display = "flex";
-        document.getElementById("dates_not_available_win__mess").innerText = "Сервис недоступен, повторите запрос позднее";
-        document.getElementById("dates_not_available_win__btn").innerText = "Хорошо, попробую еще раз чуть позже!"
-        document.querySelector(".loader").style.opacity = "0";
-        },
-        10000);
+                document.getElementById("dates_not_available_win__background").style.display = "flex";
+                document.getElementById("dates_not_available_win__mess").innerText = "Сервис недоступен, повторите запрос позднее";
+                document.getElementById("dates_not_available_win__btn").innerText = "Хорошо, попробую еще раз чуть позже!"
+                document.querySelector(".loader").style.opacity = "0";
+            },
+            10000);
         document.querySelector(".loader").style.opacity = "1";
         formData.append("dep", _dep);
         formData.append("arr", _arr);
@@ -96,10 +96,15 @@ function closeNotAvailableWin() {
     document.getElementById("dates_not_available_win__btn").innerText = "Понял, выберу другие даты!";
 }
 
+
+
 document.getElementById('arrive_date').valueAsDate = new Date();
 let tomorrow = new Date();
 tomorrow.setDate(tomorrow.getDate() + 1);
 document.getElementById('departure_date').valueAsDate = tomorrow;
+
+
+
 
 
 let slideShowTimer = setInterval(() => changePic(), 10000);

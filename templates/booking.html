@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dobrilovo Village</title>
-   <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
-    <script src="{{ url_for('static', filename='/scripts/script.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <script src="{{ url_for('static', filename='/scripts/booking.js') }}" defer></script>
+    <script src="https://smartcaptcha.yandexcloud.net/captcha.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Poiret+One&display=swap" rel="stylesheet">
@@ -14,94 +15,106 @@
 </head>
 
 <body>
-    <div class="background">
-        <div class="container">
-            <div class="menu">
-                <div class="left-part">
-                    <div class="menu-part"><a href="galery.html" class="about-btn">Галерея</a></div>
-                    <div class="menu-part">Забронировать</div>
-                    <div class="menu-part"><a href="about.html" class="about-btn">О нас</a></div>
-                </div>
-                <div class="right-part">
-                    <div class="menu-part lang">eng</div>
-                </div>
+<div class="background">
+    <div class="container">
+        <div class="menu">
+            <div class="left-part">
+                <div class="menu-part"><a href="galery.html" class="about-btn">Галерея</a></div>
+                <div class="menu-part">Забронировать</div>
+                <div class="menu-part"><a href="about.html" class="about-btn">О нас</a></div>
             </div>
-            <div class="main-part" style="justify-content: space-between;">
+            <div class="right-part">
+                <div class="menu-part lang">eng</div>
+            </div>
+        </div>
+        <div class="main-part" style="justify-content: space-between;">
+            <form class="booking__left-part">
                 <div class="book_info">
                     <div class="header">Информация о гостях</div>
                     <div class="dates_info">
                         <div class="arrive_depart_info">
                             <div class="info-text">Дата заезда:</div>
-                            <input type="date" class="dates-check" readonly id="fixed_arr_date">
+                            <input type="date" class="dates-check" readonly id="fixed_arr_date" value="{{ arr }}" name="arr">
                         </div>
                         <div class="arrive_depart_info">
                             <div class="info-text">Дата выезда:</div>
-                            <input type="date" class="dates-check" readonly id="fixed_dep_date">
+                            <input type="date" class="dates-check" readonly id="fixed_dep_date" value="{{ dep }}" name="dep">
                         </div>
                         <div class="arrive_depart_info">
                             <div class="info-text">Кол-во гостей:</div>
-                            <input type="number" class="persons" readonly id="fixed_pers_num">
+                            <input type="number" class="persons" readonly id="fixed_pers_num" value="{{ pers }}" name="pers">
                         </div>
                     </div>
                     <div class="guests_info">
-                        <div class="guest_num">Гость 1</div>
-                        <div class="guest">
+                        {% for i in range (pers) %}
+                        <div class="guest_num">Гость {{ i + 1 }}</div>
+                        <div class="guest" id="guest_{{ i + 1 }}">
                             <div class="guest_info">
                                 <div class="info-text">Фамилия:</div>
-                                <input type="text" class="persons info">
+                                <input type="text" class="persons info" name="guest_{{ i + 1 }}_surname">
                             </div>
                             <div class="guest_info">
                                 <div class="info-text">Имя:</div>
-                                <input type="text" class="persons info">
+                                <input type="text" class="persons info" name="guest_{{ i + 1 }}_name">
                             </div>
                             <div class="guest_info">
-                                <div class="info-text">Возраст:</div>
-                                <input type="number" class="persons">
+                                <div class="info-text">Отчество:</div>
+                                <input type="text" class="persons info" name="guest_{{ i + 1 }}_patron">
                             </div>
                         </div>
-                        <div class="guest_num">Гость 2</div>
-                        <div class="guest">
-                            <div class="guest_info">
-                                <div class="info-text">Фамилия:</div>
-                                <input type="text" class="persons info">
-                            </div>
-                            <div class="guest_info">
-                                <div class="info-text">Имя:</div>
-                                <input type="text" class="persons info">
-                            </div>
-                            <div class="guest_info">
-                                <div class="info-text">Возраст:</div>
-                                <input type="number" class="persons">
-                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="properties">
+                        <div class="property">
+                            <div class="info-text">Ранний заезд (+ 1000 руб):</div>
+                            <input type="checkbox" id="early_arr" onchange="changeTotalPrice(this)">
                         </div>
-                        <div class="guest_num">Гость 3</div>
-                        <div class="guest">
-                            <div class="guest_info">
-                                <div class="info-text">Фамилия:</div>
-                                <input type="text" class="persons">
-                            </div>
-                            <div class="guest_info">
-                                <div class="info-text">Имя:</div>
-                                <input type="text" class="persons">
-                            </div>
-                            <div class="guest_info">
-                                <div class="info-text">Возраст:</div>
-                                <input type="number" class="persons">
-                            </div>
+                        <div class="property">
+                            <div class="info-text">Поздний выезд (+ 1000 руб):</div>
+                            <input type="checkbox" id="late_dep" onchange="changeTotalPrice(this)">
+                        </div>
+                        <div class="property">
+                            <div class="info-text">Проживание с животными (+ 2000 руб):</div>
+                            <input type="checkbox" id="animals" onchange="changeTotalPrice(this)">
+                        </div>
+                        <div class="property">
+                            <div class="info-text">Растопка бани к приезду (+ 2000 руб):</div>
+                            <input type="checkbox" id="bath" onchange="changeTotalPrice(this)">
                         </div>
                     </div>
-                </div>                
-                 <div class="contacts">
-                    <div class="link"><img src="{{ url_for('static', filename='/images/inst.png') }}" alt="inst" class="link_img"></div>
-                    <div class="link"><img src="{{ url_for('static', filename='/images/tele.png') }}" alt="tele" class="link_img"></div>
-                    <div class="link"><img src="{{ url_for('static', filename='/images/yandex.png') }}" alt="yandex" class="link_img"></div>
+                    <div class="total_price">
+                        <div class="info-text" style="font-size: 30px; font-weight: bold;"> Итоговая стоимость проживания: <span id="price">{{ start_price }} </span>₽</div>
+                        <button class="check-dates" style="width: fit-content;font-size: 30px;" onclick="checkInputs()" type="button">Перейти к оплате</button>
+                        <div
+                                class="smart-captcha"
+                                data-sitekey="ysc1_B0mZaaXh4d8PXhWjX5qp0bqZXWAJwEzTugybrgnx929f7076"
+                                data-hl="ru"
+                        ></div>
+                    </div>
                 </div>
+            </form>
+
+            <div class="contacts">
+                <div class="link"><img src="{{ url_for('static', filename='/images/inst.png') }}" alt="inst" class="link_img"></div>
+                <div class="link"><img src="{{ url_for('static', filename='/images/tele.png') }}" alt="tele" class="link_img"></div>
+                <div class="link"><img src="{{ url_for('static', filename='/images/yandex.png') }}" alt="yandex" class="link_img"></div>
             </div>
         </div>
-        <div class="footer">
-            ИП Гоптарь Евгений Андреевич, 2024
+    </div>
+    <div class="footer">
+        ИП Гоптарь Евгений Андреевич, 2024
+    </div>
+</div>
+<div class="dates_not_available_win__background" id="check_inputs" style="display: none;">
+    <div class="dates_not_available_win__win">
+        <div class="dates_not_available_win__mess" id="dates_not_available_win__mess">
+            Не все поля заполнены!
+        </div>
+        <div class="dates_not_available_win__btn" id="dates_not_available_win__btn" onclick="document.getElementById('check_inputs').style.display = 'none'">
+            Понял, перепроверю!
         </div>
     </div>
+</div>
 </body>
 
 </html>

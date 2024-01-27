@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dobrilovo Village</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='/css/tinkoff.css') }}">
+  <script src="{{ url_for('static', filename='/scripts/booking.js') }}" defer></script>
+  <script src="{{ url_for('static', filename='/scripts/tinkoff.js') }}" defer></script>
+  <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff_v2.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Poiret+One&display=swap" rel="stylesheet">
+  <link rel="icon" href="{{ url_for('static', filename='/images/icon.ico') }}" type="image/x-icon">
+</head>
+
+<body>
+<div class="background">
+  <div class="container">
+    <form class="payform-tinkoff" name="payform-tinkoff" onsubmit="pay(this); return false;">
+      <input class="payform-tinkoff-row" type="hidden" name="terminalkey" value="TinkoffBankTest">
+      <input class="payform-tinkoff-row" type="hidden" name="frame" value="false">
+      <input class="payform-tinkoff-row" type="hidden" name="language" value="ru">
+      <input class="payform-tinkoff-row" type="text" placeholder="Сумма заказа" name="amount" required>
+      <input class="payform-tinkoff-row" type="hidden" placeholder="Номер заказа" name="order">
+      <input class="payform-tinkoff-row" type="text" placeholder="Описание заказа" name="description">
+      <input class="payform-tinkoff-row" type="text" placeholder="ФИО плательщика" name="name">
+      <input class="payform-tinkoff-row" type="email" placeholder="E-mail" name="email">
+      <input class="payform-tinkoff-row" type="tel" placeholder="Контактный телефон" name="phone">
+      <input class="payform-tinkoff-row payform-tinkoff-btn" type="submit" value="Оплатить">
+    </form>
+
+
+
+  </div>
+  <div class="footer">
+    ИП Гоптарь Евгений Андреевич, 2024
+  </div>
+</div>
+<div class="dates_not_available_win__background" id="check_inputs" style="display: none;">
+  <div class="dates_not_available_win__win">
+    <div class="dates_not_available_win__mess" id="dates_not_available_win__mess">
+      Не все поля заполнены!
+    </div>
+    <div class="dates_not_available_win__btn" id="dates_not_available_win__btn" onclick="document.getElementById('check_inputs').style.display = 'none'">
+      Понял, перепроверю!
+    </div>
+  </div>
+</div>
+</body>
+
+</html>
