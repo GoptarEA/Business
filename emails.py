@@ -3,7 +3,7 @@ import smtplib
 def send_email():
     # данные почтового сервиса
     user = "goptarea@yandexlyceum.ru"
-    passwd = "ParolZaebal@1996"
+    passwd = ""
     server = "smtp.yandex.ru"
     port = 587
 
