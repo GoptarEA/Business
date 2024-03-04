@@ -12,7 +12,7 @@ async function updateDates(_year, _month) {
 
   formData.append("year", _year);
   formData.append("month", Number(_month) + 1);
-  let response = await fetch("http://192.168.1.8:80/api/v1.0/get_booked_dates",
+  let response = await fetch("http://192.168.1.11:80/api/v1.0/get_booked_dates",
       {
         method: "POST",
         body: formData

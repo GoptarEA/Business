@@ -103,7 +103,6 @@ def payment():
 
 @app.route("/booking", methods=["GET"])
 def booking():
-    print(request.args.get("dep"))
     return render_template("booking.html")
 
 
